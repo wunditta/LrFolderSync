@@ -6,6 +6,7 @@ This plugin offers three major features:
 
 You can enable the features separately.
 
+
 # Usage
 ## Auto-sync
 ### Select Folders and Smart-collections for Synchronization
@@ -41,9 +42,12 @@ This function looks for synced photos, which are not in any collections, which a
 * Survey: The orphaned photos are shown in Survey view, so that you see only those photos. This is useful if you want to review the photos first before you remove them.
 
 ## Remember Selected Photos
-This feature operates in the background. Whenever you change back to a view, the last selected photo(s) there will be selected again. This only works as long as Lr runs. Selections will not be remembered after restarting Lr.
+The last selected photo(s) in each source (folder, collection, ...) is remembered and restored after coming back to this source.
 
-The plugin checks for changes every half second. The performance impact should still be neglectable. If not you can disable this feature. 
+This only works as long as Lr runs. Selections will not be remembered after restarting Lr.
+
+The feature operates in the background. The plugin checks for changes every half second. The performance impact should still be neglectable. If not you can disable this feature.
+
 
 # Installation
 ## Windows
@@ -67,6 +71,7 @@ The options can be found in File > Plugin-Extras > Folder Sync > Options.
 **Never synchronize Rejected photos**: This generally prevent rejected photos from being synced. You can either enable this option, or the next, but not both.
 
 **Mark folders and smart-collections to be synced without Rejected with color**: If enabled, sync-items marked with this color (default is 'yellow') will be synced but without rejected photos. Therefore you can include/exclude rejected photos on a per sync-item basis. Mark them with the standard color above (green) to be synced including rejected, or with this color to exclude them. If disabled, a color label with this color will be ignored and can be used for other purposes.
+
 
 # Behind the Scenes
 Currently the API of Lr does not allow to access or change any information in respect to online synchronization. Therefore the only option to provide such a functionality is to use the information directly from the Lightroom database (sqlite). This of course is not officially supported. You can use this plugin with only reading the database, which should not cause any issues or corrupt the database. However, please understand that I cannot guarantee this and you have to use this plugin at your own risk. So make backups of the database frequently. All I can say is that I never had any issues, even with using the features, which are writing into the database. Writing to the database is optional, but the only way to make this fully automatic. This will be explained later.
